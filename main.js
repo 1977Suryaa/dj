@@ -26,6 +26,7 @@ function draw(){
     stroke("black")
     status_1=song1.isPlaying()
     status_2=song2.isPlaying()
+    console.log(status_1,status_2)
     if(left_score>0.2){
         console.log("left")
         circle(left_wrist_x,left_wrist_y,20)
@@ -64,8 +65,8 @@ function gotResult(results){
         left_wrist_x=results[0].pose.leftWrist.x
         right_wrist_y=results[0].pose.rightWrist.y
         right_wrist_x=results[0].pose.rightWrist.x
-        left_score=results[0].pose.keypoints[9]
-        right_score=results[0].pose.keypoints[10]
+        left_score=results[0].pose.keypoints[9].score
+        right_score=results[0].pose.keypoints[10].score
     }
 
 }
